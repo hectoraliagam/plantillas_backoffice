@@ -1,0 +1,25 @@
+.venv/
+assets/
+    icon.ico
+core/
+    constants.py
+    generators.py
+templates/
+    template_registry.py
+ui/
+    app.py
+    dynamic_form.py
+    main_window.py
+    output_box.py
+    result_panel.py
+    sidebar.py
+    template_form.py
+utils/
+    clipboard.py
+config.py
+main.py
+requirements.py
+template_engine.py
+
+
+
