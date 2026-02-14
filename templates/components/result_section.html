@@ -1,0 +1,19 @@
+<div class="bg-white shadow rounded-lg p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-lg font-semibold">Resultado</h2>
+
+    <button
+      type="button"
+      onclick="copyResult()"
+      class="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700 transition text-sm"
+    >
+      Copiar
+    </button>
+  </div>
+
+  <textarea
+    id="result-box"
+    class="w-full h-96 border rounded p-4 font-mono text-sm bg-gray-50"
+    readonly
+  ></textarea>
+</div>

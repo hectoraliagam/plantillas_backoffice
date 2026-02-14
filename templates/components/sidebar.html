@@ -1,0 +1,22 @@
+<aside class="w-72 bg-slate-900 text-white p-4 overflow-y-auto">
+  <h1 class="text-xl font-bold mb-6 border-b border-slate-700 pb-2">
+    Back Office HITSS
+  </h1>
+
+  {% for categoria, templates_categoria in templates.items() %}
+  <div class="mb-6">
+    <h2 class="text-sm uppercase text-slate-400 mb-2">{{ categoria }}</h2>
+
+    <div class="space-y-1">
+      {% for template_key, data in templates_categoria.items() %}
+      <button
+        onclick="selectTemplate('{{ template_key }}')"
+        class="w-full text-left px-3 py-2 rounded hover:bg-slate-700 transition text-sm"
+      >
+        {{ data.label }}
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</aside>
