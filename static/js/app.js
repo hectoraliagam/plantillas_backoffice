@@ -2,9 +2,10 @@
 
 import { setTemplate, state } from "./state.js";
 import { findTemplate } from "./template.service.js";
-import { renderForm } from "./form.renderer.js";
+import { renderForm } from "./render/form.renderer.js";
 import { generateTemplateAPI } from "./api.js";
 import { copyTextarea } from "./clipboard.js";
+import { formatDate } from "./formatters.js";
 
 window.selectTemplate = function (templateKey) {
   const template = findTemplate(templateKey);
@@ -25,7 +26,16 @@ window.generateTemplate = async function () {
   const formData = {};
 
   state.templateFields.forEach((field) => {
-    formData[field.name] = document.getElementById(field.name)?.value || "";
+    const input = document.getElementById(field.name);
+    if (!input) return;
+
+    let value = input.value || "";
+
+    if (field.type === "date") {
+      value = formatDate(value);
+    }
+
+    formData[field.name] = value;
   });
 
   const data = await generateTemplateAPI(state.selectedTemplate, formData);
