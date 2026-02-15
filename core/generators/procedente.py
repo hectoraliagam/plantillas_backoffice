@@ -4,7 +4,7 @@ from templates_registry.constants import AUTHOR
 
 def generar_sot(d):
     return f"""
-VISITA TÉCNICA PROGRAMADA: {d['fecha']} – {d['hora']}
+VISITA TÉCNICA PROGRAMADA: {d['fecha']} | {d['hora']}
 NÚMERO SOT: {d['sot']}
 
 SERVICIO AFECTADO: {d['servicio']}

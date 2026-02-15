@@ -1,6 +1,6 @@
 # templates_registry/categories/procedente.py
 
-from templates_registry.fields import text_field, combo_field
+from templates_registry.fields import text_field, combo_field, date_field, time_range_field
 
 PROCEDENTE_TEMPLATES = {
 
@@ -8,8 +8,8 @@ PROCEDENTE_TEMPLATES = {
         "category": "PROCEDENTE",
         "label": "SOT GENERADO",
         "fields": [
-            text_field("fecha", "Fecha"),
-            text_field("hora", "Hora"),
+            date_field("fecha", "Fecha"),
+            time_range_field("hora", "Hora"),
             text_field("sot", "Número SOT"),
             combo_field("servicio", "Servicio", ["TELEFONÍA", "INTERNET", "CABLE"]),
             text_field("problema", "Problema Reportado"),
