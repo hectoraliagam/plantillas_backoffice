@@ -11,10 +11,13 @@ endblock %} {% block content %}
   </main>
 </div>
 
-<script>
-  const TEMPLATES = {{ templates | tojson }};
+<script id="templates-data" type="application/json">
+  {{ templates | tojson }}
 </script>
 
-<script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script
+  type="module"
+  src="{{ url_for('static', filename='js/app.js') }}"
+></script>
 
 {% endblock %}
