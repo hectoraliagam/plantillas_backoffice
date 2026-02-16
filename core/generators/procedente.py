@@ -1,6 +1,6 @@
 # core/generators/procedente.py
 
-from templates_registry.constants import AUTHOR
+from templates_registry.constants import get_author
 
 def generar_sot(d):
     return f"""
@@ -15,7 +15,7 @@ DESCARTES REALIZADOS: {d['descartes']}
 ID DE LLAMADA: {d['id_llamada']}
 NÚMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_cierre_conforme(d):
@@ -31,5 +31,5 @@ NÚMERO TELEFÓNICO: {d['telefono']}
 ID DE LLAMADA: {d['id_llamada']}
 NÚMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """

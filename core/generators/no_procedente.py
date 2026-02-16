@@ -1,6 +1,6 @@
 # core/generators/no_procedente.py
 
-from templates_registry.constants import AUTHOR
+from templates_registry.constants import get_author
 
 def generar_servicio_suspendido(d):
     return f"""
@@ -15,7 +15,7 @@ NÚMERO TELEFÓNICO: {d['telefono']}
 ID DE LLAMADA: {d['id_llamada']}
 NUMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_no_desea_gestion(d):
@@ -28,7 +28,7 @@ CONTACTO: {d['contacto']}
 ID DE LLAMADA: {d['id_llamada']}
 NUMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_sot_ejecucion(d):
@@ -43,7 +43,7 @@ NÚMERO TELEFÓNICO: {d['telefono']}
 ID DE LLAMADA: {d['id_llamada']}
 NÚMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_falta_contacto_cierre(d):
@@ -57,5 +57,5 @@ MOTIVO: FALTA DE CONTACTO
 SUB-MOTIVO: SE PROCEDE A CIERRE POR INCONTACTABLE
 ID DE LLAMADA: {d['id_llamada']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """

@@ -3,6 +3,8 @@
 from flask import Flask, render_template, request, jsonify
 from core.engine import generate_template
 from templates_registry.template_registry import TEMPLATES
+from templates_registry.constants import get_settings, save_settings
+
 
 app = Flask(__name__)
 
@@ -54,6 +56,31 @@ def generate():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/settings", methods=["GET"])
+def get_config():
+    return jsonify(get_settings())
+
+
+@app.route("/settings", methods=["POST"])
+def update_config():
+    data = request.json
+
+    if not data.get("agent_name") or not data.get("agent_code"):
+        return jsonify({"error": "Datos incompletos"}), 400
+
+    save_settings({
+        "agent_name": data["agent_name"],
+        "agent_code": data["agent_code"]
+    })
+
+    return jsonify({"success": True})
+
+
+@app.route("/config")
+def config_page():
+    return render_template("config.html")
 
 
 if __name__ == "__main__":

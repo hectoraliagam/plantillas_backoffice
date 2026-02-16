@@ -1,6 +1,6 @@
 # core/generators/en_tramite.py
 
-from templates_registry.constants import AUTHOR
+from templates_registry.constants import get_author
 
 def generar_no_contesta_1(d):
     return f"""
@@ -13,7 +13,7 @@ MOTIVO: FALTA DE CONTACTO
 SUB-MOTIVO: {d.get('submotivo', '')}
 ID DE LLAMADA: {d['id_llamada']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_no_contesta_2(d):
@@ -27,7 +27,7 @@ MOTIVO: FALTA DE CONTACTO
 SUB-MOTIVO: {d.get('submotivo', '')}
 ID DE LLAMADA: {d['id_llamada']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_devolucion_llamada(d):
@@ -41,7 +41,7 @@ CONTACTO: {d['contacto']}
 NÚMERO TELEFÓNICO: {d['telefono']}
 ID DE LLAMADA: {d['id_llamada']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """
 
 def generar_falta_confirmacion(d):
@@ -55,5 +55,5 @@ NÚMERO TELEFÓNICO: {d['telefono']}
 ID DE LLAMADA: {d['id_llamada']}
 NÚMERO DE TICKET: {d['ticket']}
 
-REALIZADO POR: {AUTHOR}
+REALIZADO POR: {get_author()}
 """

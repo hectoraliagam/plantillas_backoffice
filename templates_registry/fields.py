@@ -23,12 +23,12 @@ def date_field(name, label):
     }
 
 TIME_RANGES = [
-    "07:00 AM – 09:00 AM",
-    "09:00 AM – 11:00 AM",
-    "11:00 AM – 01:00 PM",
-    "02:00 PM – 04:00 PM",
-    "04:00 PM – 06:00 PM",
-    "06:00 PM – 08:00 PM",
+    "7am a 9am",
+    "9am a 11am",
+    "11am a 1pm",
+    "2pm a 4pm",
+    "4pm a 6pm",
+    "6pm a 8pm",
 ]
 
 def time_range_field(name, label):
