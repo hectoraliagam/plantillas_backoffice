@@ -1,24 +1,38 @@
 <!-- templates/components/sidebar.html -->
 
-<aside class="w-72 bg-slate-900 text-white p-4 overflow-y-auto">
-  <h1 class="text-xl font-bold mb-6 border-b border-slate-700 pb-2">
-    Back Office HITSS
-  </h1>
-
-  {% for categoria, templates_categoria in templates.items() %}
-  <div class="mb-6">
-    <h2 class="text-sm uppercase text-slate-400 mb-2">{{ categoria }}</h2>
-
-    <div class="space-y-1">
-      {% for template_key, data in templates_categoria.items() %}
-      <button
-        onclick="selectTemplate('{{ template_key }}')"
-        class="w-full text-left px-3 py-2 rounded hover:bg-slate-700 transition text-sm"
-      >
-        {{ data.label }}
-      </button>
-      {% endfor %}
-    </div>
+<aside
+  class="w-72 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 shadow-xl flex flex-col"
+>
+  <div class="mb-8">
+    <h1 class="text-2xl font-bold tracking-wide">Back Office</h1>
+    <p class="text-xs text-slate-400 mt-1">Sistema de Plantillas</p>
   </div>
-  {% endfor %}
+
+  <a
+    href="/config"
+    class="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition text-sm font-medium"
+  >
+    Configuración
+  </a>
+
+  <div class="mt-8 space-y-6 overflow-y-auto">
+    {% for categoria, templates_categoria in templates.items() %}
+    <div>
+      <h2 class="text-xs uppercase tracking-wider text-slate-400 mb-3">
+        {{ categoria }}
+      </h2>
+
+      <div class="space-y-2">
+        {% for template_key, data in templates_categoria.items() %}
+        <button
+          onclick="selectTemplate('{{ template_key }}')"
+          class="w-full text-left px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition text-sm"
+        >
+          {{ data.label }}
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </aside>
